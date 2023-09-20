@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.capstone">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+
+    <application
+        android:allowBackup="false"
+        android:name=".App"
+        android:icon="@drawable/heartbpm"
+        android:label="HeartRateMonitoring"
+        android:roundIcon="@drawable/heartbpm"
+        android:supportsRtl="true"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+        android:theme="@style/Theme.Capstone">
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true">
+            </service>
+        <service android:name=".MyNotificationListener"
+            android:exported="true"
+            android:label="My Notification Listener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".DataActivity"/> <!-- 화면 세로 고정 -->
+        <activity
+            android:name=".MainActivity"/> <!-- 화면 세로 고정 -->
+        <activity
+            android:name=".CautionActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"> <!-- 화면 세로 고정 -->
+        </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

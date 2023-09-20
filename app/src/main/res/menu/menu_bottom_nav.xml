@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="메인 화면"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/mainFragment"/>
+    <item
+        android:title="사용자 정보"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:id="@+id/userDataFragment"/>
+    <item
+        android:title="설정"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:id="@+id/optionFragment"/>
+
+</menu>
